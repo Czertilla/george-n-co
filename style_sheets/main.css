@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Optima'; 
-    src: url(fonts/Optima/Optima_Medium.ttf)
+    src: url(../fonts/Optima/Optima_Medium.ttf)
     format("truetype"); 
     font-weight: normal;
     font-style: normal;
@@ -8,9 +8,9 @@
 
 @font-face {
     font-family: 'Quicksand'; 
-    src: url(fonts/Quicksand/Quicksand_Light.otf)
-    format("otf"); 
-    font-display: block;
+    src:url('../fonts/quicksand/quicksand_light-webfont.woff') format("woff"),
+        url('../fonts/quicksand/quicksand_light-webfont.woff2') format("woff2"),
+        url('../fonts/Quicksand/Quicksand_Light.otf') format("otf");
     font-weight: lighter;
     font-style: normal;
    }
@@ -19,7 +19,7 @@ html {
     height: 100%;
     width: 100%;
     font: 'Optima';
-    /* background-image: url(../img/photo_2022-09-10_02-50-31.jpg); */
+    background-image: url(../img/photo_2022-09-10_02-50-31.jpg);
     background: 
         linear-gradient(217deg, rgba(164, 6, 255, 0.74), rgba(10, 4, 8, 0) 70.71%),
         linear-gradient(127deg, rgba(247, 42, 76, 0.336), rgba(109, 106, 255, 0) 70.71%),
@@ -36,14 +36,15 @@ form {
         linear-gradient(185deg, rgba(10, 4, 8, 0) 70.71%, rgba(164, 6, 255, 0.74)),
         linear-gradient(189deg, rgba(10, 4, 8, 0) 70.71%, rgba(164, 6, 255, 0.74)),
         rgba(255, 1, 65, 0.103);
-    backdrop-filter: blur(5px);
+    /* backdrop-filter: blur(5px); */
 }
 
 h1 {
-    font-family: 'Quicksand' !important; 
+    font-family: Quicksand ; 
     font-weight: lighter;
     font-size: 495%;
     text-align: center;
+    font-style: normal;
     }
 
 .line_menu > * {
@@ -57,23 +58,21 @@ h1 {
     font-size: 16px;
     border: none;
     text-decoration: none;
-    backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px) !important;
   }
   
 .dropdown {
     position: relative;
     display: inline-block;
-    backdrop-filter: blur(50px);
   }
   
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: rgba(155, 121, 240, 0.007);
+    background-color: rgba(155, 121, 240, 0);
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 100;
-    backdrop-filter: blur(50px), saturate(120%);
+    backdrop-filter: blur(5px) !important;
   }
   
 .dropdown-content a {
@@ -81,20 +80,24 @@ h1 {
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-    backdrop-filter: blur(50px);
   }
 
 .dropdown-content a:hover {
-    background-color: rgba(233, 81, 81, 0.473); 
-    backdrop-filter: blur(50px);
+    /* background-color: rgba(233, 81, 81, 0.473);  */
+    transform: scale(1.09);
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
-    backdrop-filter: blur(50px);
 }
-  
+
+.glass {
+    -webkit-backdrop-filter: blur(2em);
+    backdrop-filter: blur(2em);
+    padding-bottom: 400px;
+}
+
 .dropdown:hover .dropbtn {
-    background-color: #b682ce; 
+    background-color: #573f6354; 
     backdrop-filter: blur(50px);
 }
