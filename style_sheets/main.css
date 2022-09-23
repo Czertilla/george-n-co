@@ -19,6 +19,7 @@ html {
     height: 100%;
     width: 100%;
     font: 'Optima';
+    background-attachment: fixed !important;
     background-image: url(../img/photo_2022-09-10_02-50-31.jpg);
     background: 
         linear-gradient(217deg, rgba(164, 6, 255, 0.74), rgba(10, 4, 8, 0) 70.71%),
@@ -94,7 +95,19 @@ h1 {
 .glass {
     -webkit-backdrop-filter: blur(2em);
     backdrop-filter: blur(2em);
-    padding-bottom: 400px;
+}
+
+.top {
+    backdrop-filter: blur(7px) !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.hat {
+    /* padding-bottom: 100px; */
 }
 
 .dropdown:hover .dropbtn {
