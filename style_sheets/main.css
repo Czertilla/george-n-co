@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Optima'; 
-    src: url(../fonts/Optima/Optima_Medium.ttf)
-    format("truetype"); 
+    src: url('../fonts/Optima/Optima-Medium.woff') format("woff"),
+        url('../fonts/Optima/Optima_Medium.woff2') format("woff2");
     font-weight: normal;
     font-style: normal;
    }
@@ -9,35 +9,84 @@
 @font-face {
     font-family: 'Quicksand'; 
     src:url('../fonts/quicksand/quicksand_light-webfont.woff') format("woff"),
-        url('../fonts/quicksand/quicksand_light-webfont.woff2') format("woff2"),
-        url('../fonts/Quicksand/Quicksand_Light.otf') format("otf");
+        url('../fonts/quicksand/quicksand_light-webfont.woff2') format("woff2");
     font-weight: lighter;
     font-style: normal;
    }
 
+/* a {font: Quicksand;} */
+
+body {
+    position: static;
+}
+
 html {
     height: 100%;
     width: 100%;
-    font: 'Optima';
+    font-family: Optima;
     background-attachment: fixed !important;
     background-image: url(../img/photo_2022-09-10_02-50-31.jpg);
     background: 
         linear-gradient(217deg, rgba(164, 6, 255, 0.74), rgba(10, 4, 8, 0) 70.71%),
         linear-gradient(127deg, rgba(247, 42, 76, 0.336), rgba(109, 106, 255, 0) 70.71%),
-        linear-gradient(336deg, rgba(154, 81, 238, 0.8), rgba(221, 94, 221, 0.678) 70.71%),
+        linear-gradient(336deg, rgba(154, 81, 238, 0.8), rgba(119, 0, 119, 0.082) 70.71%),
         radial-gradient(circle at 50% 0,
             rgba(255,0,0,.5),
             rgba(255,0,0,0) 70.71%);
 }
 
+#page {
+    position: absolute;
+    top: 0px;
+}
+
 form {
     border-radius: 10px;
     color: rgb(5, 3, 10);
+    margin: 150px;
     background: 
         linear-gradient(185deg, rgba(10, 4, 8, 0) 70.71%, rgba(164, 6, 255, 0.74)),
         linear-gradient(189deg, rgba(10, 4, 8, 0) 70.71%, rgba(164, 6, 255, 0.74)),
         rgba(255, 1, 65, 0.103);
-    /* backdrop-filter: blur(5px); */
+    backdrop-filter: blur(5px); 
+    align-items: center;
+}
+
+.face {
+    margin: -8px;
+    border-radius: 0px;
+    color: rgb(6, 2, 56);
+    position: sticky;
+    left: -8px;
+    right: -8px;
+    background: 
+        linear-gradient(185deg, rgba(10, 4, 8, 0) 70.71%, rgba(164, 6, 255, 0.74)),
+        linear-gradient(189deg, rgba(10, 4, 8, 0) 70.71%, rgba(164, 6, 255, 0.74)),
+        rgba(255, 1, 65, 0.103);
+        backdrop-filter: unset; 
+}
+
+.post {
+    border-radius: 40px;
+    margin: 40px;
+    z-index: 0;
+    text-align: center;
+    background: 
+        linear-gradient(185deg, rgba(235, 128, 199, 0) 70.71%, rgba(174, 92, 221, 0.74)),
+        linear-gradient(189deg, rgba(202, 0, 135, 0) 70.71%, rgba(36, 2, 56, 0.74)) 
+}
+
+.content {
+    margin: 10px;
+    border-radius: 20px;
+    z-index: 0;
+}
+
+.content a {
+    display: block;
+    position: relative;
+    margin: 10px;
+    text-align: center;
 }
 
 h1 {
@@ -53,16 +102,28 @@ h1 {
 }
 
 .dropbtn {
-    background-color: #e610db1a;
     color: white;
-    padding: 16px;
+    /* padding: 16px; */
     font-size: 16px;
     border: none;
     text-decoration: none;
-    backdrop-filter: blur(50px) !important;
+    /* backdrop-filter: blur(50px); */
   }
-  
+
+.b-dropbtn {
+    background-color: #e610db13;
+    transition: background-color .3s linear;
+    padding: 16px;
+    padding-left: 32px;
+    padding-right: 32px;
+    /* font-size: 16px; */
+    border: none;
+    /* text-decoration: none; */
+    backdrop-filter: blur(50px)
+  }
+
 .dropdown {
+    /* background: rgba(255, 0, 170, 0.979); */
     position: relative;
     display: inline-block;
   }
@@ -74,22 +135,32 @@ h1 {
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     backdrop-filter: blur(5px) !important;
+    z-index: 10;
   }
   
 .dropdown-content a {
     color: rgb(255, 255, 255);
+    transition: all .3s ease-in-out;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    z-index: 10;
   }
 
 .dropdown-content a:hover {
-    /* background-color: rgba(233, 81, 81, 0.473);  */
+    background-color: rgba(33, 25, 66, 0.466); 
     transform: scale(1.09);
+}
+
+.b-dropbtn:hover {
+    backdrop-filter: blur(50px);
+    background-color: rgba(33, 25, 66, 0.466);
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
+    transition-delay: 3s;
+    
 }
 
 .glass {
@@ -98,6 +169,9 @@ h1 {
 }
 
 .top {
+    background-color: unset;
+    background:#e5e0e700;
+    border-radius: unset;
     backdrop-filter: blur(7px) !important;
     position: fixed;
     top: 0;
@@ -107,10 +181,43 @@ h1 {
 }
 
 .hat {
-    /* padding-bottom: 100px; */
+    position: static;
+}
+/* 
+.dropdown {
+    background-color: #ad08ff; 
+} */
+
+.top-menu {
+    background-color: rgba(33, 25, 66, 0.466);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    text-decoration: none;
+    backdrop-filter: blur(50px) !important;
 }
 
-.dropdown:hover .dropbtn {
-    background-color: #573f6354; 
-    backdrop-filter: blur(50px);
+#top-but {
+	position: fixed;
+	right: 45px;
+	bottom: 45px;
+    z-index: 10;
 }
+
+#nav-menu {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgb(0 0 0 / 68%);
+    min-width: 400px !important;
+    min-height: 500px;
+}
+
+.block-animation {
+    width: 50px;
+transition: width 1s cubic-bezier(0, 0, 1, 1);
+  }
+/*   
+  .block-animation:hover {
+    width: 400px;
+  } */
