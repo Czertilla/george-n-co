@@ -28,10 +28,30 @@
                     if($('#nav-menu').css('display') != 'block') {
                         $('#nav-menu').css('display', 'block');
                         $(this).css('width', '450px');
+                        $('#m-char').text('⛌');
+                        $('#m-char').css('text-align', 'right');
                     } 
                     else {
                         $('#nav-menu').css('display', 'none');
                         $(this).css('width', '50px');
+                        // $('block-animation:hover').css('width', '100px');
+                        $('#m-char').text('☱');
+                        $('#m-char').css('text-align', 'center');
+                    }
+                });
+                $('.profile-menu').click(function() {
+                    if($('#pro-menu').css('display') != 'block') {
+                        $('#pro-menu').css('display', 'block');
+                        $(this).css('width', '450px');
+                        $('#p-char').text('⛌');
+                        $('#p-char').css('text-align', 'left');
+                    } 
+                    else {
+                        $('#pro-menu').css('display', 'none');
+                        $(this).css('width', '50px');
+                        // $('block-animation:hover').css('width', '100px');
+                        $('#p-char').text('👤');
+                        $('#p-char').css('text-align', 'center');
                     }
                 });
             });
@@ -39,11 +59,34 @@
     </head>
     <body>
         <div class="glass top">
-            <button class="top-menu block-animation"><a class="dropbtn ">Меню</a></button>
+            <button class="top-menu block-animation"><a id="m-char" class="dropbtn ">&#9777;</a></button>
             <div id="nav-menu" class="dropdown-content">
                 <a href="#">Ссылка 1</a>
                 <a href="#">Ссылка 2</a>
+                <div class="dropdown">
+                    <button class="b-dropbtn" ><a class="dropbtn" href="index.html">Каталог</a></button>
+                    <div class="dropdown-content">
+                        <a href="#">First 1</a>
+                        <a href="#">Ссылка 2</a>
+                        <a href="#">Ссылка 3</a>
+                    </div>
+                </div>
                 <a href="#">Ссылка 3</a>
+            </div>
+            <button class="profile-menu block-animation"><a id="p-char" class="dropbtn ">&#128100;</a></button>
+            <div id="pro-menu" class="dropdown-content">
+                <a href="#">Ссылка 1</a>
+                <a href="#">Ссылка 2</a>
+                <div class="dropdown">
+                    <button class="b-dropbtn" ><a class="dropbtn" href="index.html">Каталог</a></button>
+                    <div class="dropdown-content">
+                        <a href="#">First 1</a>
+                        <a href="#">Ссылка 2</a>
+                        <a href="#">Ссылка 3</a>
+                    </div>
+                </div>
+                <a href="#">Ссылка 3</a>
+                <a id="quite" href="#">Выйти</a>
             </div>
         </div>
         <div id="top-but"><img src="img/pngegg2.png" width="60px" height="60px" /></div>
@@ -81,12 +124,15 @@
         </form>
         <form class="post glass">
             <div class="content">
-                <a>dgdiofgjoisdjgiojhs[oighaeorhg[ioush[iogh[doiuhg[oiudashgioua[fgi
-                    aosiegiuadhfguihae[irgspiodfhgpiudhfiugdfgdsfpgaughuishdfpguhdfpiughauihguiaherpiugduighpsiudfhg</a>
+                <a>dgdiofgjoisdjgiojhs [oighaeo rhg[ioush[i ogh[doi uhg[oiudashgioua[fgi
+                    aosiegi uadhfguihae[i rgspiodfhgpiudhfiu gdfgdsfp gaughuis hdfpguhdfpiugh auihguia herpiugduighpsiudfhg</a>
             </div>
         </form>
         <form class="post glass">
-            <div class="content"><img class="content" src="img\photo_2022-09-10_02-50-31.jpg" alt="" width="90%" height="60%"></div>
+            <div class="content">
+                <img class="content" src="img\photo_2022-09-10_02-50-31.jpg" alt="" width="100%" height="100%">
+                <a>Это наша студия. Здесь рождаются шедевры</a>
+            </div>
         </form>
     </body>
 </html>
