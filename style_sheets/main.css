@@ -75,10 +75,12 @@ form {
     margin-right: 80px;
     z-index: 0;
     text-align: center;
-    background:
-    linear-gradient(185deg, rgba(10, 4, 8, 0) 70.71%, rgb(148 170 231 / 74%)),
-    linear-gradient(-120deg, rgba(10, 4, 8, 0) 70.71%, rgb(196 207 196 / 74%)),
-    rgba(255, 1, 65, 0.103)
+    background: 
+        linear-gradient(163deg,
+        rgb(154 81 238 / 80%) 70.71%, rgb(148 170 231 / 74%)),
+        linear-gradient(-120deg, rgba(10, 4, 8, 0) 70.71%,
+        rgb(196 207 196 / 74%)),
+        rgba(255, 1, 65, 0.103);
 }
 
 .content {
@@ -97,12 +99,21 @@ form {
 }
 
 h1 {
-    font-family: Quicksand ; 
+    font-family: Quicksand; 
     font-weight: lighter;
     font-size: 495%;
     text-align: center;
     font-style: normal;
     }
+
+h2 {
+    font-family: Quicksand; 
+    font-weight: lighter;
+    color:rgb(255, 255, 255);
+    font-size: 120%;
+    text-align: center;
+    font-style: normal;
+}
 
 .line_menu > * {
     display: inline;
@@ -268,7 +279,7 @@ h1 {
   }
 
 .block-animation:hover {
-    width: 100px;
+    /* width: 60px !important; */
     background-color: rgba(46, 40, 40, 0.507)
   } 
 
