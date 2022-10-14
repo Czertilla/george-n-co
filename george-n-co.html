@@ -34,7 +34,6 @@
                     else {
                         $('#nav-menu').css('display', 'none');
                         $(this).css('width', '50px');
-                        // $('block-animation:hover').css('width', '100px');
                         $('#m-char').text('☱');
                         $('#m-char').css('text-align', 'center');
                     }
@@ -49,11 +48,50 @@
                     else {
                         $('#pro-menu').css('display', 'none');
                         $(this).css('width', '50px');
-                        // $('block-animation:hover').css('width', '100px');
                         $('#p-char').text('👤');
                         $('#p-char').css('text-align', 'center');
                     }
                 });
+            });
+        </script>
+        <script type="text/javascript">
+            $(function() {
+                $('.top-menu').hover(
+                    function() {
+                        if($('#nav-menu').css('display') != 'block') {
+                            $(this).css('width', '100px')
+                        }
+                        else {
+                            $(this).css('width', '450px').delay(300).css('width', '420px')
+                        }
+                    },
+                    function() {
+                        if($('#nav-menu').css('display') != 'block') {
+                            $(this).css('width', '50px')
+                        }
+                        else {
+                            $(this).css('width', '450px')
+                        }
+                    }
+                );
+                $('.profile-menu').hover(
+                    function() {
+                        if($('#pro-menu').css('display') != 'block') {
+                            $(this).css('width', '100px')
+                        }
+                        else {
+                            $(this).css('width', '450px')
+                        }
+                    },
+                    function() {
+                        if($('#pro-menu').css('display') != 'block') {
+                            $(this).css('width', '50px')
+                        }
+                        else {
+                            $(this).css('width', '450px')
+                        }
+                    }
+                );
             });
         </script>
     </head>
@@ -61,6 +99,7 @@
         <div class="glass top">
             <button class="top-menu block-animation"><a id="m-char" class="dropbtn ">&#9777;</a></button>
             <div id="nav-menu" class="dropdown-content">
+                <h2>Навигация по сайту</h2>
                 <a href="#">Ссылка 1</a>
                 <a href="#">Ссылка 2</a>
                 <div class="dropdown">
